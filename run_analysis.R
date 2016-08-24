@@ -56,3 +56,7 @@ names(datatwo)<- c("subjectID","activitylabel",paste0("avg_",measures))
 #Export data into txt files
 write.table(dataone,row.names = FALSE,file="./data/FirstDataSet.txt")
 write.table(datatwo,row.names = FALSE,file="./data/SecondDataSet.txt")
+
+#Output datasets
+View(dataone)
+View(datatwo)
