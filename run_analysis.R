@@ -52,3 +52,7 @@ dataone<- select(dataone[!duplicated(names(dataone))],matches("mean|std|subjectI
 datatwo <- dataone %>% group_by(subjectID,activitylabel) %>%
   summarize_each(funs(mean))
 names(datatwo)<- c("subjectID","activitylabel",paste0("avg_",measures))
+
+#Export data into txt files
+write.table(dataone,row.names = FALSE,file="./data/FirstDataSet.txt")
+write.table(datatwo,row.names = FALSE,file="./data/SecondDataSet.txt")
